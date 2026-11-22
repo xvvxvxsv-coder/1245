@@ -1,0 +1,22 @@
+name = "xray"
+main = "build/worker/shim.mjs"
+compatibility_date = "2024-05-23"
+minify = true
+
+# Replace with your Account ID obtained from Step 1
+account_id = "8ae127adbd3c73558917cdc65ab82f67"
+workers_dev = true
+
+[[kv_namespaces]]
+binding = "YUMI"
+# Replace with your KV Namespace ID obtained from Step 2
+id = "4686787c4706434d9b02c241ba0644d7"
+
+[build]
+command = "cargo install worker-build && worker-build --release"
+
+[env.dev]
+build = { command = "cargo install worker-build && worker-build --dev" }
+
+[vars]
+UUID = "2bcfbfba-b446-4ad5-93ad-72af9e008f61"   # You can customize and change this to your own UUID
